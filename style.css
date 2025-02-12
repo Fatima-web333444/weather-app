@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins",sans-serif;
+}
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+/* border: 2px solid black; */
+/* background-color: rgb(61, 138, 71); */
+background-image: url('background.jpg');
+background-position: center;
+
+}
+.container{
+    position: relative;
+    border: 2px solid rgba(198, 195, 202, 0.24);
+    background-color: rgba(92, 97, 63, 0.1);
+    backdrop-filter: blur(30px);
+    height: 100px;
+    width: 400px;
+    border-radius: 20px ;
+    padding: 30px;
+    color: white;
+    transition: height .6s ease;
+    padding-bottom: 50px;
+}
+.search-box{
+   
+    height: 50px;
+    width: 340px;
+    border: 2px solid rgba(134, 144, 153, 0.397);
+    display: flex;
+    align-items: center;
+   border-radius: 10px; 
+  
+  
+  
+   
+/* padding-bottom: 20px; */
+   /* background-color: rgb(34, 63, 69); */
+ 
+
+}
+.search-box input{
+    position: absolute;
+    height: 55px;
+    width: 340px;
+    border-radius: 10px;
+    outline: none;
+    font-weight: 500;
+    font-size: 22px;
+    background:transparent;
+    text-transform:uppercase;
+    color: white;
+    padding: 0 48px 0 42px;
+    /* padding:top right bottom left */
+}
+.search-box input::placeholder{
+        color: white;
+        text-transform: capitalize;
+}
+.search-box button{
+    position: absolute;
+    right:0;
+    margin-right: 30px;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    color: white;
+    padding: 0 40px 0 5px;
+    cursor: pointer;
+}
+.search-box i{
+    position: absolute;
+    left: 40px;
+    font-size: 30px;
+}
+.weather-box{
+    text-align: center;
+    margin: 40px;
+  /* border: 2px solid black; */
+  width: 300px;
+  height: 300px;
+}
+
+.weather-box,
+.weather-details,
+.not-found,
+.city-hide{
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+
+.weather-box.active,
+.weather-details.active,
+.not-found.active,
+.city-hide.active
+{
+    visibility: visible;
+}
+
+.weather-box .box,
+.not-found .box{
+    transform: translateY(-100%);
+}
+
+.weather-box.active .box,
+.not-found.active .box{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay: .6s;
+} 
+
+.cloud-img{
+    padding: 10px;
+    width: 90%;
+    padding-right: 60px;
+   
+
+}
+
+
+.temperature{
+    /* border: 2px solid black; */
+    padding-right: 70px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+.weather-box .temperature span{
+position: absolute;
+font-size: 24px;
+
+
+}
+
+
+.description{
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+     /* border: 2px solid black; */
+     padding-right: 40px;
+
+}
+
+
+.weather-details{
+    /* border: 2px solid black; */
+    position:absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+}
+
+
+.weather-details .humidity,
+.weather-details .wind{
+display: flex;
+align-items: center;
+width:50%;
+transform: translateY(-100%);
+/* border: 2px solid black; */
+
+}
+.weather-details.active .humidity,
+.weather-details.active .wind{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay:1.2s ;
+}
+.humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+.wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+.weather-details i{
+    font-size: 50px;
+      margin-right: 10px;
+}
+.weather-details span{
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+}
+.weather-details p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.not-found{
+    position: absolute;
+    /* border: 2px solid rgb(119, 46, 46); */
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+}
+.not-found img{
+    width: 65%;
+   
+
+}
+.not-found p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+.city-hide{
+    display: none;
+}
