@@ -12,7 +12,6 @@ CSS – For styling the UI
 JavaScript – For fetching and displaying weather data
 OpenWeatherMap API – To fetch real-time weather data
 
-
 🔧 How to Use
 Enter the city name in the search bar
 Click the search button
